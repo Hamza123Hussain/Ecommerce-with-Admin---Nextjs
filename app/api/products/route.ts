@@ -45,20 +45,7 @@ export const POST = auth(async (req: any) => {
   }
 })
 
-export const GET = auth(async (req: any) => {
-  if (!req.auth) {
-    return NextResponse.json(
-      {
-        message: 'not authorized',
-      },
-      {
-        status: 401,
-      }
-    )
-  }
-
-  const { user } = req.auth
-
+export const GET = async (req: any) => {
   try {
     await MongoConnect()
     const Products = await ProductModel.find({})
@@ -79,4 +66,4 @@ export const GET = auth(async (req: any) => {
       }
     )
   }
-})
+}
