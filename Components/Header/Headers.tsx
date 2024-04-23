@@ -28,23 +28,23 @@ const Headers = () => {
 
   const { data: session } = useSession()
   return (
-    <header className="bg-black text-white sticky top-0  border-2 border-b-gray-500 sm:px-2 px-4 w-full sm:w-auto     z-10">
+    <header className="bg-black text-white sticky top-0  border-2 border-b-gray-500 sm:px-2 px-4    z-10">
       <nav className="container mx-auto px-6 py-3">
-        <div className="flex flex-col md:flex-row md:items-center justify-between">
-          <div className="text-white font-bold text-xl">
+        <div className="flex flex-col md:flex-row md:items-center justify-between w-64 sm:w-full  ">
+          <div className="text-white font-bold text-xl mb-2 sm:mb-0 text-center">
             <a href="/">CLOTHS</a>
           </div>
 
           <div className="flex-1 md:mx-4 my-2 md:my-0">
             <div className="flex items-center  rounded-lg">
               <form
-                className="flex items-center justify-center flex-1"
+                className="flex items-center justify-center flex-1 gap-2 mb-5  sm:mb-0"
                 onSubmit={handleSubmit}
               >
-                <div className=" w-72">
+                <div className="  ">
                   <input
                     type="search"
-                    className=" w-64 px-4 py-1 flex-grow text-white rounded-full focus:outline-none"
+                    className=" w-56 sm:w-96  px-4 py-1 flex-grow text-white rounded-full focus:outline-none"
                     placeholder="Search"
                     value={search}
                     onChange={handlechange}
@@ -53,16 +53,20 @@ const Headers = () => {
                 <div>
                   <button
                     type="submit"
-                    className={`flex items-center bg-blue-500 justify-center w-12 h-12 text-white rounded-r-lg ${
+                    className={`flex items-center justify-center w-8 sm:w-12 h-8 sm:h-8 border-2 border-green-500  text-white rounded-full ${
                       search.length > 0
-                        ? 'bg-purple-500'
-                        : 'bg-gray-500 cursor-not-allowed'
-                    }`}
+                        ? ' opacity-100'
+                        : ' opacity-15 cursor-not-allowed'
+                    } `}
                     disabled={search.length === 0}
                   >
                     <svg
-                      className="w-5 h-5"
-                      fill="none"
+                      className={`w-5 h-5  bg-clip-text ${
+                        search.length > 0
+                          ? ' opacity-100'
+                          : ' opacity-15 cursor-not-allowed'
+                      }"`}
+                      fill=""
                       stroke="currentColor"
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"

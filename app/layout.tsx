@@ -22,7 +22,7 @@ export default function RootLayout({
           <div className=" min-h-screen flex flex-col">
             <Headers />
             {children}
-            <footer className="footer footer-center p-1 bg-base-300 text-base-content fixed bottom-0 left-0 w-full">
+            <footer className="footer footer-center  bg-base-300  fixed bottom-0 left-0 text-xs w-full">
               <p>Copyright @ 2023 - All Rights Reserved by Shiba Inu</p>
             </footer>
           </div>
