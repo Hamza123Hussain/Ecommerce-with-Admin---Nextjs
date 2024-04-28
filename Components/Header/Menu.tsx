@@ -22,7 +22,7 @@ export default function Menu() {
               <path fill="none" d="M0 0h48v48H0z"></path>
             </svg>
             {items.length !== 0 && (
-              <sup className="badge text-cyan-100 badge-success badge-xs absolute top-0.5">
+              <sup className="  text-green-900   relative right-10 text-sm ">
                 {items.reduce((cartitems, item) => cartitems + item.qty, 0)}
               </sup>
             )}

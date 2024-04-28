@@ -43,7 +43,7 @@ const OrderHistory = () => {
       // Only execute router-related logic if the router is mounted
       getData()
     }
-  }, [routerMounted]) // Run this effect when routerMounted changes
+  }, []) // Run this effect when routerMounted changes
 
   if (orderData.length > 1) {
     console.log(orderData)
@@ -78,7 +78,7 @@ const OrderHistory = () => {
   return (
     <>
       <button
-        className=" bg-blue-400 text-teal-50 p-4    w-auto rounded-full mt-4 hover:bg-green-600 hover:border-2 hover:border-white "
+        className=" bg-blue-400 text-teal-50 p-2 text-xs sm:text-lg    w-auto rounded-full mt-2 hover:bg-green-600 hover:border-2 hover:border-white "
         onClick={() => router.back()}
       >
         GO BACK TO ADMIN DASHBOARD

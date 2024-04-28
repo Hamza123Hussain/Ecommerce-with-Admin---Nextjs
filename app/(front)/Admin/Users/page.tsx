@@ -50,7 +50,7 @@ const Users = () => {
   return (
     <div>
       <button
-        className=" bg-blue-400 text-teal-50 p-4    w-auto rounded-full mt-4 hover:bg-green-600 hover:border-2 hover:border-white "
+        className=" bg-blue-400 text-teal-50 p-2 text-xs sm:text-lg    w-auto rounded-full mt-2 hover:bg-green-600 hover:border-2 hover:border-white "
         onClick={() => router.back()}
       >
         GO BACK TO ADMIN DASHBOARD

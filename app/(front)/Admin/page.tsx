@@ -37,7 +37,7 @@ const AdminDashBoard = () => {
     <>
       <div className=" flex flex-col justify-center items-center gap-8 mt-5 mb-5">
         <Link href={'/Admin/AddProduct'}>
-          <div className="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+          <div className="relative flex  w-72 sm:w-96  flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
             <div className="relative mx-4 mt-4 h-80 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
               <img
                 src="85980904-add-product-vector-icon.jpg"
@@ -52,7 +52,7 @@ const AdminDashBoard = () => {
           </div>
         </Link>
         <Link href={'/Admin/OrderHistory'}>
-          <div className="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+          <div className="relative flex w-72 sm:w-96  flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
             <div className="relative mx-4 mt-4 h-80 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
               <img src="maxresdefault.jpg" alt="Order History" />
             </div>
@@ -64,7 +64,7 @@ const AdminDashBoard = () => {
           </div>
         </Link>
         <Link href={'/Admin/Users'}>
-          <div className="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+          <div className="relative flex w-72 sm:w-96  flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
             <div className="relative mx-4 mt-4 h-80 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
               <img
                 src="user-details-and-account-icon-concept-vector.jpg"
@@ -79,7 +79,7 @@ const AdminDashBoard = () => {
           </div>
         </Link>
         <Link href={'/Admin/Revenue'}>
-          <div className="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+          <div className="relative flex w-72 sm:w-96  flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
             <div className="relative mx-4 mt-4 h-80 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
               <img
                 src="istockphoto-1304149942-612x612.jpg"
@@ -95,7 +95,7 @@ const AdminDashBoard = () => {
         </Link>
 
         <Link href={'/Admin/Products'}>
-          <div className="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+          <div className="relative flex w-72 sm:w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
             <div className="relative mx-4 mt-4 h-80 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
               <img src="Logo-Barra.png" alt="Total Products" />
             </div>

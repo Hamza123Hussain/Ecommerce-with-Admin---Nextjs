@@ -64,9 +64,9 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
                   <span className="text-sm ml-1">Tax included</span>
                 </p>
               </div>
-              <div className="flex space-x-2 mt-4">
+              {/* <div className="flex space-x-2 mt-4">
                 {product.rating} <RiStarSFill /> ({product.numReviews})
-              </div>
+              </div> */}
 
               <div className="mt-8">
                 <h3 className="text-lg font-bold text-gray-800">
@@ -75,7 +75,7 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
                 <h4>{product.description}</h4>
               </div>
               <div className="mt-8">
-                <h3 className="text-lg font-bold text-gray-800">
+                <h3 className="text-lg font-bold text-gray-800 mb-5">
                   STATUS :{' '}
                   {product.countInStock > 0 ? 'IN STOCK' : 'OUT OF STOCK'}
                 </h3>
