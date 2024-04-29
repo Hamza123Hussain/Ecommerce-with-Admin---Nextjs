@@ -1,7 +1,7 @@
 'use client'
 import { Product } from '@/libs/models/ProductModel'
 import { useSession } from 'next-auth/react'
-import Image from 'next/image'
+
 import Link from 'next/link'
 import React from 'react'
 

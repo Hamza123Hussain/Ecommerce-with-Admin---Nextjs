@@ -2,7 +2,6 @@
 
 import UsecartService from '@/libs/Hooks/UseCartStore'
 import { OrderItem } from '@/libs/models/OrderModel'
-import { useRouter } from 'next/navigation'
 
 import { useEffect, useState } from 'react'
 

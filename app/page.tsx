@@ -1,11 +1,7 @@
 'use client'
 import Productitem from '@/Components/Products/Productitem'
-import data from '@/data'
-import productservice from '@/libs/services/productService'
-import { Metadata } from 'next'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import { Suspense, useEffect, useState } from 'react'
+
+import { useEffect, useState } from 'react'
 import Loading from './Loading'
 
 export default function Home() {

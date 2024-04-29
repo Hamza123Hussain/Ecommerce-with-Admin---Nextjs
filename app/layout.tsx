@@ -6,7 +6,7 @@ import Providers from '@/Components/Provider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Create Next App',
+  title: 'Ecommerce App',
   description: 'Ecommerce App',
 }
 

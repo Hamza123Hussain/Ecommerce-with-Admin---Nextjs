@@ -1,4 +1,5 @@
 'use client'
+import Loading from '@/app/Loading'
 import { useSession } from 'next-auth/react'
 import { useParams } from 'next/navigation'
 import useSWR from 'swr'
@@ -7,11 +8,16 @@ export default function OrderDetails({ orderId }: { orderId: String }) {
   // const { data: session } = useSession()
   const params = useParams()
 
-  console.log(params.id)
+  // console.log(params.id)
   const { data, error } = useSWR(`/api/orders/${params.id}`)
 
   if (error) return <div>{error.message}</div>
-  if (!data) return <div>Loading...</div>
+  if (!data)
+    return (
+      <div>
+        <Loading />
+      </div>
+    )
 
   const {
     paymentMethod,

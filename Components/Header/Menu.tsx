@@ -8,9 +8,9 @@ export default function Menu() {
 
   return (
     <div>
-      <ul className="flex items-stretch">
+      <ul className="">
         <li>
-          <Link className="btn btn-ghost rounded-btn" href={'/cart'}>
+          <Link className="btn btn-ghost rounded-btn " href={'/cart'}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48"
@@ -22,9 +22,9 @@ export default function Menu() {
               <path fill="none" d="M0 0h48v48H0z"></path>
             </svg>
             {items.length !== 0 && (
-              <sup className="  text-green-900   relative right-10 text-sm ">
+              <span className="text-green-300 text-sm">
                 {items.reduce((cartitems, item) => cartitems + item.qty, 0)}
-              </sup>
+              </span>
             )}
           </Link>
         </li>

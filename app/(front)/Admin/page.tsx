@@ -3,35 +3,35 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
 const AdminDashBoard = () => {
-  const [OrderData, setdata] = useState([])
+  // const [OrderData, setdata] = useState([])
 
-  const GetData = async () => {
-    try {
-      const res = await fetch('/api/Admin', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-      const datas = await res.json()
+  // const GetData = async () => {
+  //   try {
+  //     const res = await fetch('/api/Admin', {
+  //       method: 'GET',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //     })
+  //     const datas = await res.json()
 
-      if (res.ok) {
-        // console.log('data is here : ', datas.Data)
-        setdata(datas.Data)
-      } else {
-        console.log('no data got')
-      }
-    } catch (error: any) {
-      console.log(error)
-    }
-  }
-  useEffect(() => {
-    GetData()
-  }, [])
+  //     if (res.ok) {
+  //       // console.log('data is here : ', datas.Data)
+  //       // setdata(datas.Data)
+  //     } else {
+  //       console.log('no data got')
+  //     }
+  //   } catch (error: any) {
+  //     console.log(error)
+  //   }
+  // }
+  // useEffect(() => {
+  //   GetData()
+  // }, [])
 
-  if (OrderData.length > 1) {
-    console.log(OrderData)
-  }
+  // if (OrderData.length > 1) {
+  //   console.log(OrderData)
+  // }
 
   return (
     <>

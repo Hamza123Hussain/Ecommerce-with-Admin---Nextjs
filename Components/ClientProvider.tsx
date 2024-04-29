@@ -25,6 +25,7 @@ export default function ClientProvider({
 
   return (
     <>
+      {/* this is the default config of swr */}
       <SWRConfig
         value={{
           onError: (error, key) => {

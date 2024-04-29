@@ -16,6 +16,7 @@ const Form = () => {
     itemsPrice,
     totalPrice,
     clear,
+    init,
   } = useCartService()
 
   const router = useRouter()
@@ -46,7 +47,7 @@ const Form = () => {
       if (res.ok) {
         clear()
         toast.success('Order placed successfully')
-        router.push(`/order/${data.ORDER._id}`)
+        router.push(`/order/${data.ORDER._id}`), init()
       } else {
         toast.error(data.message)
       }
@@ -114,9 +115,9 @@ const Form = () => {
               {ShippingDetails.postalCode}, {ShippingDetails.country}{' '}
             </p>
             <div>
-              <Link className="btn" href="/Shipping">
+              {/* <Link className="btn" href="/Shipping">
                 Edit
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

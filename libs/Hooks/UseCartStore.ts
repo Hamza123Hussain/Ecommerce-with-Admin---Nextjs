@@ -51,74 +51,92 @@ const updateCart = (updatedItems: OrderItem[]) => {
   })
 }
 // features of the cart are executed in this function
+// This function is defined to create a custom hook called useCartService
 export default function useCartService() {
+  // Destructuring values from the CartStore hook
   const {
-    items,
-    itemsPrice,
-    taxPrice,
-    shippingPrice,
-    totalPrice,
-    ShippingDetails,
-    paymentMethod,
+    items, // Array of items in the cart
+    itemsPrice, // Total price of items
+    taxPrice, // Total tax price
+    shippingPrice, // Shipping price
+    totalPrice, // Total price including tax and shipping
+    ShippingDetails, // Details of the shipping address
+    paymentMethod, // Chosen payment method
   } = CartStore()
-  return {
-    items,
-    itemsPrice,
-    taxPrice,
-    shippingPrice,
-    totalPrice,
-    ShippingDetails,
-    paymentMethod,
 
-    // function executing when an item is added
+  // Returning an object containing all the above destructured values and additional functions for manipulating the cart state
+  return {
+    items, // Array of items in the cart
+    itemsPrice, // Total price of items
+    taxPrice, // Total tax price
+    shippingPrice, // Shipping price
+    totalPrice, // Total price including tax and shipping
+    ShippingDetails, // Details of the shipping address
+    paymentMethod, // Chosen payment method
+
+    // Function executed when an item is added to the cart
     increase: (item: OrderItem) => {
-      // check for existing item
+      // Check if the item already exists in the cart
       const exist = items.find((x) => x.slug === item.slug)
+      // Update cart items based on whether the item exists or not
       const updatedCartItems = exist
-        ? //if item exits then just incrment its qty
+        ? // If item exists, increment its quantity
           items.map((x) =>
             x.slug === item.slug ? { ...exist, qty: exist.qty + 1 } : x
           )
-        : // else add the item and intialzie qty by 1
+        : // If item does not exist, add it to the cart with quantity initialized to 1
           [...items, { ...item, qty: 1 }]
 
-      // the cart state is updated with the new data
+      // Update the cart state with the new data
       updateCart(updatedCartItems)
     },
 
-    // function to remove item from cart
+    // Function to decrease the quantity of an item in the cart
     decrease: (item: OrderItem) => {
+      // Check if the item exists in the cart
       const exist = items.find((x) => x.slug === item.slug)
+      // If item does not exist, return
       if (!exist) return
+      // Update cart items based on the quantity of the existing item
       const updatedCartItems =
-        // if single item exists then remove from cart
+        // If the quantity of the existing item is 1, remove it from the cart
         exist.qty === 1
           ? items.filter((x: OrderItem) => x.slug !== item.slug)
-          : // else decrease qty by 1
+          : // If the quantity of the existing item is greater than 1, decrease its quantity by 1
             items.map((x) =>
               x.slug === item.slug ? { ...exist, qty: exist.qty - 1 } : x
             )
 
+      // Update the cart state with the new data
       updateCart(updatedCartItems)
     },
+
+    // Function to save shipping details to the cart state
     SaveShippingDetails: (ShippingDetails: ShippingAddress) => {
+      // Update the cart state with the provided shipping details
       CartStore.setState({
         ShippingDetails,
       })
     },
+
+    // Function to save payment details to the cart state
     SavePaymentDetails: (paymentMethod: String) => {
+      // Update the cart state with the provided payment method
       CartStore.setState({
         paymentMethod,
       })
     },
 
-    /// removing everything from cart
+    // Function to clear all items from the cart
     clear: () => {
+      // Update the cart state with an empty array of items
       CartStore.setState({
         items: [],
       })
     },
-    init: () => CartStore.setState(intialState), // whenever the user logouts all of their details, order history and payments will be removed thorugh this function
+
+    // Function to initialize the cart state
+    init: () => CartStore.setState(intialState), // Whenever the user logs out, their details, order history, and payments will be removed through this function
     //
   }
 }

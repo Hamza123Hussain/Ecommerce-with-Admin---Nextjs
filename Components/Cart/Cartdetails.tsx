@@ -21,7 +21,7 @@ export default function Cartdetails() {
     return (
       <div>
         <h1>CART IS EMPTY</h1>
-        <h1>Start Shopping </h1>
+        <Link href={'/'}>Start Shopping </Link>
       </div>
     )
   }

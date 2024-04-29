@@ -1,11 +1,11 @@
 import AddtoCart from '@/Components/Products/AddtoCart'
-import data from '@/data'
+
 import productservice from '@/libs/services/productService'
 import Link from 'next/link'
 import React from 'react'
-import { RiStarSFill } from 'react-icons/ri'
+
 import { convertDocToObj } from '@/libs/utils'
-import Image from 'next/image'
+
 // generatMetadata is function to modify meta data details
 export async function generateMetadata({
   params,
@@ -49,9 +49,8 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
             <div className="w-full lg:sticky top-0 sm:flex gap-2">
               <img
                 src={`${product.banner}`}
-                className="w-full my-6"
+                className="w-[400px] h-[400px] my-6"
                 alt={product.slug}
-                style={{ width: '400px', height: '400px' }}
               />
             </div>
             <div>

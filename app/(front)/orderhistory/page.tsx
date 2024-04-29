@@ -1,10 +1,11 @@
 'use client'
 
+import Loading from '@/app/Loading'
 import { Order } from '@/libs/models/OrderModel'
 import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
+
 import useSWR from 'swr'
 
 export default function MyOrders() {
@@ -13,7 +14,7 @@ export default function MyOrders() {
   //SWR MAKES THE CODE CONCISE
   const { data: orders, error } = useSWR(`/api/orders/mine`)
   if (error) return 'An error has occurred.'
-  if (!orders) return 'Loading...'
+  if (!orders) return <Loading />
 
   console.log(session?.user)
 

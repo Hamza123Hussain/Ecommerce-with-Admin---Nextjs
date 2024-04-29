@@ -1,4 +1,5 @@
 'use client'
+import Loading from '@/app/Loading'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
@@ -6,6 +7,7 @@ import toast from 'react-hot-toast'
 
 const ProductPage = ({ params }: { params: { slug: string } }) => {
   const router = useRouter()
+  const [loading, setloading] = useState(true)
   const [productdetails, setDetails] = useState({
     name: '',
     banner: '',
@@ -96,6 +98,9 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
     getData()
   }, [])
 
+  if (loading) {
+    return <Loading />
+  }
   return (
     <div className="container mx-auto mt-8">
       <Link href={'/'} className="btn btn-info mb-8">

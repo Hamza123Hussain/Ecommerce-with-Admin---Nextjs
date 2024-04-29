@@ -3,18 +3,18 @@ import useCartService from '@/libs/Hooks/UseCartStore'
 import { ShippingAddress } from '@/libs/models/OrderModel'
 import { useRouter } from 'next/navigation'
 
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import toast from 'react-hot-toast'
 
 const Form = () => {
   const router = useRouter()
-  const { SaveShippingDetails } = useCartService()
+  const { SaveShippingDetails, ShippingDetails } = useCartService()
   const [formValues, setFormValues] = useState<ShippingAddress>({
-    fullName: '',
-    address: '',
-    city: '',
-    postalCode: '',
-    country: '',
+    fullName: ShippingDetails.fullName,
+    address: ShippingDetails.address,
+    city: ShippingDetails.city,
+    postalCode: ShippingDetails.postalCode,
+    country: ShippingDetails.country,
   })
 
   // useEffect(() => {
