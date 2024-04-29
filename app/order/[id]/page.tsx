@@ -4,7 +4,7 @@ import { useSession } from 'next-auth/react'
 import { useParams } from 'next/navigation'
 import useSWR from 'swr'
 
-export default function OrderDetails({ orderId }: { orderId: String }) {
+export default function OrderDetails() {
   // const { data: session } = useSession()
   const params = useParams()
 
